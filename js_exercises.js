@@ -1,4 +1,26 @@
+//------------------------------------------------------------------- BOTTLES OF BEER -------------------------------------------------------------------------------------------------
+var nrBottles = 99;
+
+function beer() {
+    while (nrBottles >= 0) {
+        lessBottles = nrBottles - 1;
+        if (nrBottles > 2) {
+            console.log(nrBottles + " bottles of beer on the wall, " + nrBottles + " bottles of beer. Take one down and pass it around, " + lessBottles + " bottles of beer on the wall.");
+        } else if (nrBottles === 2) {
+            console.log(nrBottles + " bottles of beer on the wall, " + nrBottles + " bottles of beer. Take one down and pass it around, " + lessBottles + " bottle of beer on the wall.");
+        } else if (nrBottles === 1) {
+            console.log(nrBottles + " bottle of beer on the wall, " + nrBottles + " bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.");
+        } else if (nrBottles === 0) {
+            console.log("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.");
+        }
+        nrBottles--;
+    }
+}
+beer();
+
+
 //------------------------------------------------------------------- RANDOME NAME FROM A LIST -------------------------------------------------------------------------------------------------
+
 var names = ["Angela", "Jake", "Pen", "James", "Lara", "Jason"];
 function whoIsPaying(names) {
     var pay = Math.random() * names.length;
@@ -14,19 +36,30 @@ alert(names[pay] + " is going to buy lunch today!")
 
 
 //------------------------------------------------------------------- FIZZBUZZ GAME -------------------------------------------------------------------------------------------------
-//for (var i = 1; i <= 100; i++) {
-//     if (i % 3 === 0) {
-//         i = "Fizz";
-//     }
-//     if (i % 5 === 0) {
-//         i = "Buzz";
-//     }
-//     if (i % 3 === 0 && i % 5 === 0) {
-//         i = "FizzBuzz";
-//     }
-//     console.log(i);
-// }
 
+// function with WHILE
+var output = [];
+var count = 1;
+
+function fizzBuzz() {
+
+    while (count <= 100) {
+
+        if (count % 3 === 0 && count % 5 === 0) {
+            output.push("FizzBuzz");
+        } else if (count % 3 === 0) {
+            output.push("Fizz");
+        } else if (count % 5 === 0) {
+            output.push("Buzz");
+        } else {
+            output.push(count);
+        }
+        count++;
+    }
+    console.log(output);
+}
+
+// the easy function of the FIZZBUZZ game
 var output = [];
 var count = 1;
 
@@ -80,7 +113,7 @@ isLeap(2400);
 
 //------------------------------------------------------------- LOVE CALCULATOR -------------------------------------------------------------------------------------------------------
 
-// love calculator between 1 to 100 % - different messages
+// love calculator between 1 to 100 % - different messages with IF
 var name = prompt("Enter your name: ");
 var crush = prompt("Enter your crush: ");
 
