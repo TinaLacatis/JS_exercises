@@ -1,3 +1,22 @@
+function fibonacci(n) {
+
+    var fibonacciArray = [];
+    if (n === 1) {
+        fibonacciArray = [0];
+    } else if (n === 2) {
+        fibonacciArray = [0, 1];
+    } else {
+        fibonacciArray = [0, 1];
+
+        for (var i = 2; i < n; i++) {
+            fibonacciArray.push(fibonacciArray[fibonacciArray.length - 2] + fibonacciArray[fibonacciArray.length - 1]);
+        }
+    }
+    return fibonacciArray;
+}
+fibonacciArray = fibonacci(5);
+console.log(fibonacciArray);
+
 //------------------------------------------------------------------- BOTTLES OF BEER -------------------------------------------------------------------------------------------------
 var nrBottles = 99;
 
@@ -37,14 +56,31 @@ alert(names[pay] + " is going to buy lunch today!")
 
 //------------------------------------------------------------------- FIZZBUZZ GAME -------------------------------------------------------------------------------------------------
 
+// function with FOR
+var output = [];
+
+function fizzBuzz() {
+    for (var i = 1; i <= 100; i++) {
+        if (i % 3 === 0 && i % 5 === 0) {
+            output.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+            output.push("Fizz");
+        } else if (i % 5 === 0) {
+            output.push("Buzz");
+        } else {
+            output.push(i);
+        }
+    }
+    console.log(output);
+}
+fizzBuzz();
+
 // function with WHILE
 var output = [];
 var count = 1;
 
 function fizzBuzz() {
-
     while (count <= 100) {
-
         if (count % 3 === 0 && count % 5 === 0) {
             output.push("FizzBuzz");
         } else if (count % 3 === 0) {
@@ -59,7 +95,7 @@ function fizzBuzz() {
     console.log(output);
 }
 
-// the easy function of the FIZZBUZZ game
+// the easy function of the FIZZBUZZ game/ funtion with IF
 var output = [];
 var count = 1;
 
