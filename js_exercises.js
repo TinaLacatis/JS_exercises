@@ -1,3 +1,23 @@
+//------------------------------------------------------------------- FIBONACCI -------------------------------------------------------------------------------------------------
+// function with array
+function fibonacciGenerator(n) { // create the function
+    var arrayFibonacci = []; // create the empty array
+    for (var i = 0; i < n; i++) {
+        if (arrayFibonacci.length < 2) { // check if the array length is smaller then 2 (for n=0: array length=0; for n=1: array length=0 because we check the previous array which has no elements, we push the element and now the array will have 1 element; for n=2: array length=1 because we have one element in our previous array, we push the new element and now the array will have 2 elements)
+            arrayFibonacci.push(i); // if the lenght is <2 we add: for n=0 no element (=> [] array length = 0); for n=1 element i=0, that means we add element 0 to our array (=> [0] array length = 1); for n=2 add element i++ (0+1), it means we add element 1(=> [0, 1] array length=2), it means we move to the ELSE condition
+        } else {
+            arrayFibonacci.push(arrayFibonacci[i - 1] + arrayFibonacci[i - 2]); // if the length of the array is>=2 we call the previous element of the array [i-1] and the element before the previous one [i-2] and we add them together. Now we have the new element of the current array 
+            //for n=3 we call the previous element (i-1) of the previous array which is 1 and the one before the previous element (i-2) which is 0 and we add them together => 0+1=1 and this is our new element of the array: [0, 1, 1]
+            // for n=4 i-1= 1 and i-2=1 => the new element is 1+1=2 => [0, 1, 1, 2]
+            // for n=5 i-1= 2 and i-2=1 => the new element is 2+1=3 => [0, 1, 1, 2, 3]
+        }
+
+    }
+    return arrayFibonacci;
+}
+fibonacciGenerator(5);
+
+// function with array IF and FOR conditions
 function fibonacci(n) {
 
     var fibonacciArray = [];
